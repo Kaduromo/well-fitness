@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900&display=swap);
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --max-width: 1430px;
+  --dark-gray: #1a1a25;
+  --gray: #384255;
+  --gray-rgba: rgba(133, 143, 164, 0.15);
+  --red: #f53b49;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#__next > main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}

@@ -2,9 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,9 +18,10 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/layout/*": ["./src/layout/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env-copy.d.ts", "declarations.d.ts", "**/*.ts", "**/*.tsx", "src/dynamic_adapt.js"],
   "exclude": ["node_modules"]
 }
