@@ -2,16 +2,25 @@ import { useState } from "react"
 import cn from "classnames"
 
 import { HeaderProps } from "./Header.props"
-import styles from "./Header.module.scss"
+import styles from "./Header.module.css"
 import { Button, ButtonIcon } from "@/components"
+import useWindowSize from "@/hooks/useWindowSize"
 
 import LogoIcons from "../logo.svg"
 import MenuIcon from "./menu.svg"
 
 const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [menuActive, setMenuActive] = useState(false)
+  const [widthWindow] = useWindowSize()
+
+  if (typeof window === "object") {
+    menuActive
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "")
+  }
 
   const handleMenu = () => setMenuActive(!menuActive)
+
   return (
     <header
       className={
@@ -23,7 +32,29 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
         <a href="#">
           <LogoIcons className={styles.logo} />
         </a>
-        <div>Moscow</div>
+
+        {widthWindow >= 560 && <div>Moscow</div>}
+
+        <ButtonIcon
+          className={styles.search}
+          icon="search"
+          appearance="primary"
+        />
+
+        <div className={styles.button}>
+          <a href="#">
+            <ButtonIcon icon="comparison" appearance="primary" />
+            <span>15</span>
+          </a>
+          <a href="#">
+            <ButtonIcon icon="heart" appearance="primary" />
+            <span>15</span>
+          </a>
+          <a href="#">
+            <ButtonIcon icon="cart" appearance="primary" />
+            <span>15</span>
+          </a>
+        </div>
         <Button
           className={styles.menu}
           appearance="primary"
@@ -38,11 +69,6 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
             <Button appearance="bg_red">
               <MenuIcon /> Каталог
             </Button>
-            <ButtonIcon
-              className={styles.search}
-              icon="search"
-              appearance="primary"
-            />
           </div>
           <ul>
             <li>
@@ -70,20 +96,6 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
               <a href="#">Контакты</a>
             </li>
           </ul>
-          <div className={styles.button}>
-            <a href="#">
-              <ButtonIcon icon="comparison" appearance="primary" />
-              <span>15</span>
-            </a>
-            <a href="#">
-              <ButtonIcon icon="heart" appearance="primary" />
-              <span>15</span>
-            </a>
-            <a href="#">
-              <ButtonIcon icon="cart" appearance="primary" />
-              <span>15</span>
-            </a>
-          </div>
         </nav>
       </div>
       <div className={styles.category}>

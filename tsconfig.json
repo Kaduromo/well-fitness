@@ -19,7 +19,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
-      "@/layout/*": ["./src/layout/*"]
+      "@/layout/*": ["./src/layout/*"],
+      "@/hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["next-env-copy.d.ts", "declarations.d.ts", "**/*.ts", "**/*.tsx", "src/dynamic_adapt.js"],

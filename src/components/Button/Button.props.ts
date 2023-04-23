@@ -14,5 +14,5 @@ export interface ButtonProps
     | "border_red"
     | "border_white"
     | "border_gray"
-  arrow?: "right" | "down" | "none"
+  arrow?: "up" | "down" | "none"
 }

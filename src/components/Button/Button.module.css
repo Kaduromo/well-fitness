@@ -83,3 +83,17 @@
 
   color: #858fa4;
 }
+
+.arrow {
+  display: inline-flex;
+  margin-left: 10px;
+}
+
+.down {
+  transition: all 0.3s ease-in;
+}
+
+.up {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in;
+}

@@ -1,27 +1,9 @@
-import { useState, useLayoutEffect } from "react"
-
+import useWindowSize from "@/hooks/useWindowSize"
 import HeaderDesctop from "./HeaderDesctop"
 import HeaderMobile from "./HeaderMobile"
 
 const Header = (): JSX.Element => {
   const [widthWindow] = useWindowSize()
-
-  function useWindowSize() {
-    const [size, setSize] = useState([0])
-
-    useLayoutEffect(() => {
-      const updateSize = () => {
-        setSize([window.innerWidth])
-      }
-
-      window.addEventListener("resize", updateSize)
-
-      updateSize()
-
-      return () => window.removeEventListener("resize", updateSize)
-    }, [])
-    return size
-  }
 
   return (
     <>

@@ -1,10 +1,14 @@
-import { ButtonProps } from "./Button.props"
-import styles from "./Button.module.scss"
 import cn from "classnames"
+
+import { ButtonProps } from "./Button.props"
+import styles from "./Button.module.css"
+
+import ArrowIcon from "./arrow.svg"
 
 const Button = ({
   appearance,
   children,
+  arrow = "none",
   className,
   ...props
 }: ButtonProps): JSX.Element => {
@@ -22,6 +26,17 @@ const Button = ({
       {...props}
     >
       {children}
+
+      {arrow !== "none" && (
+        <span
+          className={cn(styles.span, styles.arrow, {
+            [styles.up]: arrow === "up",
+            [styles.down]: arrow === "down",
+          })}
+        >
+          <ArrowIcon />
+        </span>
+      )}
     </button>
   )
 }
