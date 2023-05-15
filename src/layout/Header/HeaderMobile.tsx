@@ -8,6 +8,7 @@ import useWindowSize from "@/hooks/useWindowSize"
 
 import LogoIcons from "../logo.svg"
 import MenuIcon from "./menu.svg"
+import Menu from "./Menu/Menu"
 
 const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [menuActive, setMenuActive] = useState(false)
@@ -29,8 +30,8 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
       {...props}
     >
       <div className={cn(styles.container, "container")}>
-        <a href="#">
-          <LogoIcons className={styles.logo} />
+        <a href="#" className={styles.logo}>
+          <LogoIcons />
         </a>
 
         {widthWindow >= 560 && <div>Moscow</div>}
@@ -65,12 +66,13 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
       </div>
       <div className={styles.nav}>
         <nav className="container">
-          <div className={styles.catalog}>
-            <Button appearance="bg_red">
-              <MenuIcon /> Каталог
-            </Button>
-          </div>
-          <ul>
+          <ul className={styles.catalog}>
+            <li>
+              Каталог
+              <Menu />
+            </li>
+          </ul>
+          <ul className={styles.items}>
             <li>
               <a href="#">Бренды</a>
             </li>
@@ -96,9 +98,17 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
               <a href="#">Контакты</a>
             </li>
           </ul>
+          <div>
+            <a href="tel:78000000000">+7 (800) 000-00-00</a>
+            <Button appearance="red">Заказать звонок</Button>
+          </div>
+          <div>
+            <Button appearance="primary">Для дилеров</Button>
+            <Button appearance="gray">Become a Partner</Button>
+          </div>
         </nav>
       </div>
-      <div className={styles.category}>
+      {/* <div className={styles.category}>
         <div className="container">
           <Button appearance="primary" arrow="down">
             Для дома
@@ -107,7 +117,7 @@ const HeaderMobile = ({ className, ...props }: HeaderProps): JSX.Element => {
             Для фитнес клуба
           </Button>
         </div>
-      </div>
+      </div> */}
     </header>
   )
 }

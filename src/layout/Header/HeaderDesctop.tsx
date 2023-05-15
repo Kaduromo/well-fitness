@@ -6,13 +6,14 @@ import { Button, ButtonIcon } from "@/components"
 
 import LogoIcons from "../logo.svg"
 import MenuIcon from "./menu.svg"
+import Menu from "./Menu/Menu"
 
 const HeaderDesctop = ({ className, ...props }: HeaderProps): JSX.Element => {
   return (
     <header className={styles.header} {...props}>
       <div className={cn(styles.container, "container")}>
-        <a href="#">
-          <LogoIcons className={styles.logo} />
+        <a href="#" className={styles.logo}>
+          <LogoIcons />
         </a>
         <div>Moscow</div>
         <Button appearance="primary">Для дилеров</Button>
@@ -29,17 +30,18 @@ const HeaderDesctop = ({ className, ...props }: HeaderProps): JSX.Element => {
       </div>
       <div className={styles.nav}>
         <nav className="container">
-          <div className={styles.catalog}>
-            <Button appearance="bg_red">
-              <MenuIcon /> Каталог
-            </Button>
-            <ButtonIcon
-              className={styles.search}
-              icon="search"
-              appearance="primary"
-            />
-          </div>
-          <ul>
+          <ul className={styles.catalog}>
+            <li>
+              <a href="catalog">
+                <MenuIcon /> Каталог
+              </a>
+              <Menu />
+            </li>
+            <li>
+              <ButtonIcon icon="search" appearance="primary" />
+            </li>
+          </ul>
+          <ul className={styles.items}>
             <li>
               <a href="#">Бренды</a>
             </li>
@@ -81,7 +83,7 @@ const HeaderDesctop = ({ className, ...props }: HeaderProps): JSX.Element => {
           </div>
         </nav>
       </div>
-      <div className={styles.category}>
+      {/* <div className={styles.category}>
         <div className="container">
           <Button appearance="primary" arrow="down">
             Для дома
@@ -90,7 +92,7 @@ const HeaderDesctop = ({ className, ...props }: HeaderProps): JSX.Element => {
             Для фитнес клуба
           </Button>
         </div>
-      </div>
+      </div> */}
     </header>
   )
 }

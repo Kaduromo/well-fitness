@@ -5,10 +5,12 @@ import HeaderMobile from "./HeaderMobile"
 const Header = (): JSX.Element => {
   const [widthWindow] = useWindowSize()
 
+  // console.log("size", widthWindow)
+
   return (
     <>
-      {widthWindow > 1060 && <HeaderDesctop />}
-      {widthWindow <= 1060 && <HeaderMobile />}
+      {widthWindow > 999.98 && <HeaderDesctop />}
+      {widthWindow <= 999.98 && <HeaderMobile />}
     </>
   )
 }

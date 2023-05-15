@@ -32,6 +32,7 @@ const Button = ({
           className={cn(styles.span, styles.arrow, {
             [styles.up]: arrow === "up",
             [styles.down]: arrow === "down",
+            [styles.right]: arrow === "right",
           })}
         >
           <ArrowIcon />

@@ -1,11 +1,16 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react"
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  ReactNode,
+} from "react"
 
 export interface ButtonProps
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  children: ReactNode
+  children?: ReactNode
   appearance:
     | "primary"
     | "gray"
@@ -14,5 +19,5 @@ export interface ButtonProps
     | "border_red"
     | "border_white"
     | "border_gray"
-  arrow?: "up" | "down" | "none"
+  arrow?: "up" | "down" | "right" | "none"
 }

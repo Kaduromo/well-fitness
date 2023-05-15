@@ -5,6 +5,7 @@
   --max-width: 1430px;
   --dark-gray: #1a1a25;
   --gray: #384255;
+  --light-gray: #f7f7f7;
   --gray-rgba: rgba(133, 143, 164, 0.15);
   --red: #f53b49;
 }
@@ -22,6 +23,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 ul,

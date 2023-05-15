@@ -1,0 +1,30 @@
+.menu {
+  background: #fff;
+  color: #000;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 990;
+  padding: 15px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 150vh;
+  background: rgba(26, 26, 37, 0.5);
+  z-index: -2;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 30px 0 20px;
+}

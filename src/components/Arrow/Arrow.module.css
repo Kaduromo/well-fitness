@@ -1,0 +1,35 @@
+.arrow {
+  cursor: pointer;
+  position: relative;
+  margin: 8px;
+}
+.arrow div {
+  position: relative;
+  width: 12px;
+  height: 2px;
+  background-color: #909cb5;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.arrow div::before,
+.arrow div::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background-color: #909cb5;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.arrow div::before {
+  top: 2.2px;
+  right: -2px;
+  transform: rotate(-45deg);
+}
+
+.arrow div::after {
+  top: -2.2px;
+  right: -2px;
+  transform: rotate(45deg);
+}
