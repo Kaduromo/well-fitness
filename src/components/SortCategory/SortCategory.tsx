@@ -1,8 +1,8 @@
 import { useState } from "react"
 import cn from "classnames"
+import { Arrow } from "@/components"
 
 import styles from "./SortCategory.module.css"
-import { Arrow } from "@/components"
 
 const SortCategory = (ctg: {
   link: string
@@ -18,32 +18,28 @@ const SortCategory = (ctg: {
   return (
     <>
       {[ctg].map(({ link, title, item }) => (
-        <li key={title} className={cn(styles.sort, click ? styles.active : "")}>
-          <a href={link}>
+        <div
+          key={title}
+          className={cn(styles.sort, click ? styles.active : "")}
+        >
+          <a
+            href={link}
+            className={cn(styles.sort, click ? styles.active : "")}
+          >
             {title}
             {item.length ? <Arrow onClick={() => setClick(!click)} /> : null}
           </a>
-          <ul className={styles.sort__item}>
-            {item.length >= 9
-              ? item.slice(0, 8).map(({ link,img, text }, idx) => (
-                  <li key={idx}>
-                    <a href={link}>
-                      <img src={img} alt={text} />
-                      <span>{text}</span>
-                    </a>
-                  </li>
-                ))
-              : item.map(({ link, img, text }, idx) => (
-                  <li key={idx}>
-                    <a href={link}>
-                      <img src={img} alt={text} />
-                      <span>{text}</span>
-                    </a>
-                  </li>
-                ))}
-            <a href="#">{item.length >= 9 && "Смотреть ещё"}</a>
-          </ul>
-        </li>
+          <div className={styles.sort__item}>
+            <div>
+              {item.map(({ link, img, text }, idx) => (
+                <a href={link} key={idx + text}>
+                  <img src={img} alt={text} />
+                  <span>{text}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       ))}
     </>
   )

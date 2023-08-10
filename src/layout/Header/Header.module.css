@@ -165,7 +165,8 @@
   pointer-events: none;
 }
 
-@media (max-width: 1023.98px) {
+/* @media (max-width: 1023.98px) { */
+@media (max-width: 999.98px) {
   .container {
     position: relative;
     z-index: 50;

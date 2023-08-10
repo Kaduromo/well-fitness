@@ -1,8 +1,6 @@
-import cn from "classnames"
-
 import { MenuProps } from "./Menu.props"
 import styles from "./Menu.module.css"
-import { Button, SortCategory } from "@/components"
+import { SortCategory } from "@/components"
 
 const initialMenu = [
   {
@@ -19,6 +17,7 @@ const initialMenu = [
         text: "Эллиптические тренажеры",
         img: "/menu/Elliptical.png",
       },
+
       {
         link: "Exercise_bikes",
         text: "Велотренажеры",
@@ -238,18 +237,9 @@ const Menu = ({ className, ...props }: MenuProps): JSX.Element => {
           <li>Для дома</li>
           <li>Для фитнес клуба</li>
         </ul>
-
-        {/* <div className={styles.content}>
-          <div className={styles.home}>
-
-        </div>
-        </div> */}
-
-        <ul className={styles.list}>
-          {initialMenu.map((ctg) => (
-            <SortCategory key={ctg.title} {...ctg} />
-          ))}
-        </ul>
+        {initialMenu.map((ctg) => (
+          <SortCategory key={ctg.title} {...ctg} />
+        ))}
       </div>
     </div>
   )

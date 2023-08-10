@@ -1,17 +1,34 @@
+import { useState } from "react"
+import cn from "classnames"
 import useWindowSize from "@/hooks/useWindowSize"
-import HeaderDesctop from "./HeaderDesctop"
-import HeaderMobile from "./HeaderMobile"
+import HeaderLevelUp from "./HeaderLevelUp"
+import HeaderNav from "./HeaderNav"
+import { HeaderProps } from "./Header.props"
+import styles from "./Header.module.css"
 
-const Header = (): JSX.Element => {
+const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
+  const [menuActive, setMenuActive] = useState(false)
   const [widthWindow] = useWindowSize()
 
-  // console.log("size", widthWindow)
+  const handleMenu = () => {
+    if (typeof window === "object") {
+      menuActive
+        ? (document.body.style.overflow = "")
+        : (document.body.style.overflow = "hidden")
+    }
+    setMenuActive(!menuActive)
+  }
 
   return (
-    <>
-      {widthWindow > 999.98 && <HeaderDesctop />}
-      {widthWindow <= 999.98 && <HeaderMobile />}
-    </>
+    <header
+      className={
+        menuActive ? cn(styles.header, styles.menu_open) : styles.header
+      }
+      {...props}
+    >
+      <HeaderLevelUp widthWindow={widthWindow} handleMenu={handleMenu} />
+      <HeaderNav widthWindow={widthWindow} />
+    </header>
   )
 }
 
