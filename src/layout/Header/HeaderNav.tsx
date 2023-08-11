@@ -1,12 +1,13 @@
-import styles from "./Header.module.css"
+import cn from "classnames"
 import { Button, ButtonIcon } from "@/components"
 import Menu from "./Menu/Menu"
 import MenuIcon from "./menu.svg"
+import styles from "./Header.module.css"
 
 const HeaderNav = ({ widthWindow }): JSX.Element => {
   return (
-    <div className={styles.nav}>
-      <nav className="container">
+    <nav className={styles.nav}>
+      <div className={cn(styles.nav__container, "container")}>
         <ul className={styles.catalog}>
           <li>
             <a href="catalog">
@@ -74,8 +75,8 @@ const HeaderNav = ({ widthWindow }): JSX.Element => {
             </div>
           </>
         )}
-      </nav>
-    </div>
+      </div>
+    </nav>
   )
 }
 

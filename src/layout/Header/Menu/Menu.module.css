@@ -29,3 +29,9 @@
   position: relative;
   padding-top: 30px;
 }
+
+@media (max-width: 999.98px) {
+  .menu {
+    top: -100vh;
+  }
+}

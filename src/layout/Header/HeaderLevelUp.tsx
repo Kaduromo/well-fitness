@@ -2,6 +2,7 @@ import cn from "classnames"
 import { Button, ButtonIcon } from "@/components"
 import LogoIcons from "../logo.svg"
 import styles from "./Header.module.css"
+import HeaderNav from "./HeaderNav"
 
 const HeaderLevelUp = ({ widthWindow, handleMenu }): JSX.Element => {
   return (
