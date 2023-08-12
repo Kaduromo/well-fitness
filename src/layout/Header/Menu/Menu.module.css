@@ -32,6 +32,16 @@
 
 @media (max-width: 999.98px) {
   .menu {
-    top: -100vh;
+    position: relative;
+    top: 0;
+    background: var(--dark-gray);
+    color: #fff;
+    padding: 10px 0;
+  }
+  .menu::after {
+    display: none;
+  }
+  .menu .container {
+    max-width: 100%;
   }
 }

@@ -64,7 +64,7 @@ const HeaderNav = ({ widthWindow }): JSX.Element => {
           </div>
         )}
         {widthWindow <= 999.98 && (
-          <>
+          <div className={styles.info}>
             <div>
               <a href="tel:78000000000">+7 (800) 000-00-00</a>
               <Button appearance="red">Заказать звонок</Button>
@@ -73,7 +73,7 @@ const HeaderNav = ({ widthWindow }): JSX.Element => {
               <Button appearance="primary">Для дилеров</Button>
               <Button appearance="gray">Become a Partner</Button>
             </div>
-          </>
+          </div>
         )}
       </div>
     </nav>

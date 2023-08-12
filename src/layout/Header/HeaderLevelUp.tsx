@@ -22,14 +22,19 @@ const HeaderLevelUp = ({ widthWindow, handleMenu }): JSX.Element => {
           />
 
           <div className={styles.button}>
-            <a href="#">
-              <ButtonIcon icon="comparison" appearance="primary" />
-              <span>15</span>
-            </a>
-            <a href="#">
-              <ButtonIcon icon="heart" appearance="primary" />
-              <span>15</span>
-            </a>
+            {widthWindow >= 560 && (
+              <>
+                <a href="#">
+                  <ButtonIcon icon="comparison" appearance="primary" />
+                  <span>15</span>
+                </a>
+                <a href="#">
+                  <ButtonIcon icon="heart" appearance="primary" />
+                  <span>15</span>
+                </a>
+              </>
+            )}
+
             <a href="#">
               <ButtonIcon icon="cart" appearance="primary" />
               <span>15</span>
